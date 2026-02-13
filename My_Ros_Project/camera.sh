@@ -1,0 +1,2 @@
+#!/bin/bash
+ros2 run v4l2_camera v4l2_camera_node --ros-args -p image_size:="[640,480]" -p camera_frame_id:=camera_link_optical

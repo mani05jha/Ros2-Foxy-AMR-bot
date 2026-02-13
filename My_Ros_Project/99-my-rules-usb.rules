@@ -1,0 +1,2 @@
+SUBSYSTEM==tty, KERNELS==1-1.1, SYMLINK+=ttyLidar
+SUBSYSTEM==tty, KERNELS==1-1.2, SYMLINK+=ttyNano

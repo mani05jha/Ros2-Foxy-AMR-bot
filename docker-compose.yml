@@ -1,0 +1,26 @@
+version: '2.4'
+volumes:
+  ros: {}
+services:
+  ros2foxy:
+    restart: always
+    network_mode: host
+    build: ./My_Ros_Project
+    container_name: "Ros2_Foxy"
+    volumes:
+      - 'ros:/data/ros'
+    devices:
+      - "/dev/vchiq:/dev/vchiq"
+      - "/dev/video0:/dev/video0"
+      - "/dev/ttyNano:/dev/ttyUSB1"
+      - "/dev/ttyLidar:/dev/ttyUSB0"
+    environment:
+      - loop_rate=30
+      - TZ=Asia/Kolkata
+      - baud_rate=57600
+      - encoder_cpr=2750
+      - PYTHONUNBUFFERED=1
+      - serial_port1=/dev/ttyUSB1
+      - serial_port2=/dev/ttyUSB0
+    # labels:
+    #   io.balena.features.udev: '1'
